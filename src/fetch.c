@@ -289,11 +289,7 @@ void *os()
 			info.col7 =
 				BBLUE "\\ \\" BWHITE "__/  |     " BBLUE;
 			info.col8 = BBLUE " \\" BWHITE "(_____/" BBLUE;
-			info.getPkgCount =
-				"[[ $(which sqlite3 2>/dev/null) && $? -ne "
-				"1 ]] && (sqlite3 "
-				"/var/lib/rpm/rpmdb.sqlite \"select * from "
-				"Name\"|wc -l) || rpm -qa | wc -l";
+			info.getPkgCount = "rpm -qa --nodigest --nosignature | wc -l";
 		} else if (strncmp(osname, "Gentoo", 6) == 0) {
 			info.col1 = BMAGENTA "   _-----_ \n";
 			info.col2 = BMAGENTA "  (       \\  ";
