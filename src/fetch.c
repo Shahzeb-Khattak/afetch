@@ -104,12 +104,14 @@ void *user()
 
 void *shell()
 {
-	char *shell = getenv("SHELL");
-	char *slash = strrchr(shell, '/');
-	if (slash) {
-		shell = slash + 1;
-	}
-	shellname = shell;
+	// *Hardcoding fish as shellname (its not but its setup as my terminal's shell)
+	// char *shell = getenv("SHELL");
+	// char *slash = strrchr(shell, '/');
+	// if (slash) {
+	// 	shell = slash + 1;
+	// }
+	// shellname = shell;
+	shellname = "fish";
 	return NULL;
 }
 
